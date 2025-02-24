@@ -4,7 +4,8 @@ import { VscHome, VscArchive, VscAccount, VscSettingsGear } from "react-icons/vs
 
 import Hero from "../components/Hero/Hero";
 import AboutMe from "../components/About-Me/About-Me";
-import Dock from "../components/Prefabs/Menu-Dock";
+import TechStack from "../components/TechStack/TechStack";
+
 
 export default function Homepage() {
 
@@ -17,16 +18,12 @@ export default function Homepage() {
     
 
     return(
-        <div className="flex flex-col max-w-7xl mx-auto space-y-8 md:py-36 pb-14">
+        <div className="flex flex-col max-w-7xl mx-auto space-y-8 md:py-36 pb-14 m-auto">
            
             <Hero />
             <AboutMe />
-            <Dock className="bg-[#060606]"
-            items={items}
-            panelHeight={68}
-            baseItemSize={50}
-            magnification={70}
-            />
+            <TechStack />
+           
         </div>
     )
 }

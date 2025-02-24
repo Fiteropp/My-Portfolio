@@ -2,8 +2,16 @@
 
 @tailwind utilities;
 
+
+@theme { 
+  --color-dark-violet: #231C26;        
+  
+}
+
+
 html {
   background-color: #0d0f13 ;
   font-family: "DM Sans", serif;
   color: rgb(214, 217, 223)
 }
+
