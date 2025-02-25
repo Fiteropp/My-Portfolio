@@ -18,7 +18,7 @@ export default function Homepage() {
     
 
     return(
-        <div className="flex flex-col max-w-7xl mx-auto space-y-8 md:py-36 pb-14 m-auto">
+        <div className="flex flex-col max-w-7xl mx-auto md:py-36 pb-14 m-auto">
            
             <Hero />
             <AboutMe />
