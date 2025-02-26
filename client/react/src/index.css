@@ -5,9 +5,8 @@
 
 @theme { 
   --color-dark-violet: #231C26;        
-  
+  --breakpoint-mdd: 55rem;
 }
-
 
 html {
   background-color: #0d0f13 ;

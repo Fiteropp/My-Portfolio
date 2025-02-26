@@ -7,6 +7,7 @@ import AboutMe from "../components/About-Me/About-Me";
 import TechStack from "../components/TechStack/TechStack";
 
 
+
 export default function Homepage() {
 
     const items = [
@@ -18,11 +19,13 @@ export default function Homepage() {
     
 
     return(
-        <div className="flex flex-col max-w-7xl mx-auto md:py-36 pb-14 m-auto">
+        <div className="flex flex-col max-w-7xl mx-auto md:py-36 pb-14 m-auto items-center px-[5%]">
            
             <Hero />
-            <AboutMe />
+           
             <TechStack />
+
+            <AboutMe />
            
         </div>
     )
