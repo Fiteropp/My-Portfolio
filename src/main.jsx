@@ -5,6 +5,7 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
+  HashRouter
 } from "react-router-dom";
 
 
@@ -30,6 +31,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <HashRouter>
       <RouterProvider router={router} />
+    </HashRouter> 
   </StrictMode>
 );
