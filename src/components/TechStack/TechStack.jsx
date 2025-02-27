@@ -227,7 +227,7 @@ export default function TechStack() {
   ];
 
   return (
-    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-7xl mx-auto w-full  items-start justify-start mt-40 mb-10">
+    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-7xl mx-auto w-full  items-start justify-start mt-40 mb-150 sm:mb-100 md:mb-10 xl:mb-5">
       <Tabs tabs={tabs} />
     </div>
   );
