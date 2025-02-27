@@ -1,12 +1,25 @@
 import React from "react";
 
+import ScrollFloat from "../UI/ScrollFloat";
+
 export default function AboutMe() {
+
+
     return (
         <section className="flex flex-col justify-center items-center max-w-6xl">
-            <h3 className="text-gray-400 mb-4 text-4xl place-self-start">
+            <div className="place-self-start text-5xl">
+                <ScrollFloat
+                animationDuration={1}
+                ease='back.inOut(2)'
+                scrollStart='center bottom+=50%'
+                scrollEnd='bottom bottom-=40%'
+                stagger={0.03}
+                >
                 About Me
-            </h3>
-            <p className="text-[1.2em]  gap-2 flex flex-col">
+                </ScrollFloat>
+            </div>
+            
+            <div className="text-[1.2em]  gap-4 flex flex-col">
                 <p>
                     Hi, I'm Ilia, a second-year software development student at vocational school Varia in Vantaa. I’m passionate about web development, game programming, and 3D modeling,
                     and I love building both functional and visually appealing projects.
@@ -27,10 +40,11 @@ export default function AboutMe() {
                 I also design 3D-printable parts using SolidWorks and Fusion 360.
                 </p>
                 <p>
+                    I speak English, Finnish and Russian.
                     I am always eager to learn, take on new challenges, and refine my skills in both software development and 3D design.
                 </p>
 
-            </p>
+            </div>
         </section>
     )
 }

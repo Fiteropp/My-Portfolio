@@ -1,30 +1,129 @@
 import React from "react";
+import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-    return (
-        <header class="fixed flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-3 dark:bg-neutral-800 z-10">
-      <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
-    <div class="flex items-center justify-between">
-      <a class="flex-none text-xl font-semibold dark:text-white focus:outline-none focus:opacity-80" href="#" aria-label="Brand">
-        Brand
-      </a>
-      <div class="sm:hidden">
-        <button type="button" class="hs-collapse-toggle relative size-7 flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10" id="hs-navbar-example-collapse" aria-expanded="false" aria-controls="hs-navbar-example" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-example">
-          <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-          <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-          <span class="sr-only">Toggle navigation</span>
-        </button>
+  const NavbarList = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "Projects",
+      link: "/projects",
+    },
+    {
+      name: "Contact Me",
+      link: "/contact-me",
+    },
+  ];
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [toggle, setToggle] = useState(false);
+  const [selected, setSelected] = useState("Components");
+  const toggleClass = () => {
+    setIsNavOpen(!isNavOpen);
+    const closeAfterClick = document.querySelector("#nav-icon4");
+    closeAfterClick?.classList?.toggle("open");
+  };
+  return (
+    <>
+      <div
+        className="lg:px-14 xl:px-28 transition-all duration-700 fixed right-0 left-0 z-50 top-0 backdrop-blur-[5px]"
+      >
+        <div className="flex justify-start md:justify-center w-full max-w-screen-3xl mx-auto font-semibold h-15 px-5">
+          <div className="flex items-center sm:gap-3 md:gap-8">
+            {NavbarList.map((data, index) => (
+              <div
+                className="group"
+                data-testid={`${data.name}-navlink`}
+                key={index}
+                onClick={() => setSelected(data.name)}
+              >
+                <span className="font-nunito text-lg text-center font-semibold text-white opacity-80 cursor-pointer md:flex md:items-center hidden">
+                <Link to={data.link}>{data.name}</Link>
+                  
+                  
+                </span>
+                
+                <div
+                  className={`w-full h-0.5 ${
+                    selected == data?.name
+                      ? "bg-white opacity-80"
+                      : "group-hover:bg-white group-hover:opacity-80"
+                  }`}
+                ></div>
+              </div>
+            ))}
+            <button
+              className="w-12 h-12 relative focus:outline-none md:hidden"
+              onClick={() => {
+                toggleClass();
+                setToggle(!toggle);
+              }}
+            >
+              <div className="block w-5 absolute left-6 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+                <span
+                  className={`block absolute h-0.5 w-7 text-white bg-current transform transition duration-300 ease-in-out ${
+                    toggle ? "rotate-45" : "-translate-y-1.5"
+                  }  
+                `}
+                ></span>
+                <span
+                  className={`block absolute h-0.5 w-7 text-white bg-current transform transition duration-300 ease-in-out ${
+                    toggle && "opacity-0"
+                  }`}
+                ></span>
+                <span
+                  className={`block absolute h-0.5 w-7 text-white bg-current transform transition duration-300 ease-in-out ${
+                    toggle ? "-rotate-45" : "translate-y-1.5"
+                  }`}
+                ></span>
+              </div>
+            </button>
+          </div>
+          <div
+            className={`md:invisible w-full h-full flex flex-wrap flex-col justify-center fixed left-0 top-11 ${
+              toggle ? "visible z-20" : "invisible -z-10"
+            }`}
+          >
+            <div
+              className={`w-full h-full bg-[#365CCE] absolute left-0 transition-all duration-300 ease-in-out top-8 ${
+                toggle ? "ssm:w-3/5 opacity-60" : "ssm:w-0 -z-10"
+              }`}
+            ></div>
+            <div
+              data-tilt
+              data-tilt-perspective="2000"
+              className="relative z-20 text-center pt-24 w-full ssm:w-3/5"
+            >
+              <div
+                className={`block min-h-[130px] w-fit mx-auto transform transition ${
+                  toggle
+                    ? "opacity-100 -translate-y-1/3 delay-[0.45s]"
+                    : "opacity-0 -translate-y-0  delay-[0s]"
+                }`}
+              >
+                <ul
+                  className={`transition w-fit flex flex-col gap-5 my-5 ${
+                    toggle ? "delay-[0.45s]" : "delay-[0s]"
+                  }`}
+                >
+                  {NavbarList.map((data, index) => (
+                    <span
+                      className="font-semibold text-white text-opacity-100 text-center cursor-pointer px-2 md:hidden"
+                      key={index}
+                    >
+                      {data.name}
+                    </span>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div id="hs-navbar-example" class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block" aria-labelledby="hs-navbar-example-collapse">
-      <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-        <a class="font-medium text-blue-500 focus:outline-none" href="#" aria-current="page">Landing</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500" href="#">Account</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500" href="#">Work</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500" href="#">Blog</a>
-      </div>
-    </div>
-  </nav>
-</header>
-    )
+      {/* Add your content from below div */}
+      {/* <div className="w-5 mt-20"></div> */}
+    </>
+  );
 }

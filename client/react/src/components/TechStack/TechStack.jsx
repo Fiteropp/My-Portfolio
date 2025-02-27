@@ -93,7 +93,7 @@ export default function TechStack() {
       content: (
         <div className="w-full overflow-hidden relative h-50% rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-800 to-dark-violet">
           <p className="text-3xl font-medium">Programming Languages:</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mdd:grid-cols-5 align-center items-center place-items-center justify-center shrink gap-5 mt-9 mb-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mdd:grid-cols-4 align-center items-center place-items-center justify-center shrink gap-5 mt-9 mb-2">
 
             <TiltedCard
               imageSrc="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/640px-JavaScript-logo.png"
@@ -112,6 +112,20 @@ export default function TechStack() {
             <TiltedCard
               imageSrc="https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png"
               captionText="C++"
+              containerHeight="150px"
+              containerWidth="150px"
+              imageHeight="150px"
+              imageWidth="150px"
+              rotateAmplitude={15}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={false}
+            />
+
+              <TiltedCard
+              imageSrc="https://db.cs.uni-tuebingen.de/teaching/ws2223/sql-is-a-programming-language/logo.svg"
+              captionText="SQL"
               containerHeight="150px"
               containerWidth="150px"
               imageHeight="150px"
@@ -148,7 +162,7 @@ export default function TechStack() {
       content: (
         <div className="w-full overflow-hidden relative h-50% rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-800 to-dark-violet">
           <p className="text-3xl font-medium">Software</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mdd:grid-cols-5 align-center items-center place-items-center justify-center shrink gap-5 mt-9 mb-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mdd:grid-cols-4 align-center items-center place-items-center justify-center shrink gap-5 mt-9 mb-2">
 
             <TiltedCard
               imageSrc="https://download.blender.org/branding/community/blender_community_badge_black.png"
@@ -192,6 +206,20 @@ export default function TechStack() {
               displayOverlayContent={false}
             />
 
+            <TiltedCard
+              imageSrc="https://myigetit.com/wp-content/uploads/2024/12/solid-works-copy.webp"
+              captionText="SolidWorks"
+              containerHeight="150px"
+              containerWidth="150px"
+              imageHeight="150px"
+              imageWidth="148px"
+              rotateAmplitude={15}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={false}
+            />
+
           </div>
         </div>
       ),
@@ -199,7 +227,7 @@ export default function TechStack() {
   ];
 
   return (
-    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-7xl mx-auto w-full  items-start justify-start mt-30 mb-10">
+    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-7xl mx-auto w-full  items-start justify-start mt-40 mb-10">
       <Tabs tabs={tabs} />
     </div>
   );
