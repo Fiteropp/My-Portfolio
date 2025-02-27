@@ -94,7 +94,7 @@ export default function Navbar() {
             <div
               data-tilt
               data-tilt-perspective="2000"
-              className="relative z-20 backdrop-blur-[5px] text-center pt-24 w-full ssm:w-3/5 "
+              className="relative z-20 backdrop-blur-[5px] transition-all duration-300 text-center pt-24 w-full ssm:w-3/5 "
             >
               <div
                 className={` block min-h-[130px] w-fit mx-auto transform transition ${
@@ -113,7 +113,7 @@ export default function Navbar() {
                       className="font-semibold text-white text-opacity-100 text-center cursor-pointer px-2 md:hidden"
                       key={index}
                     >
-                      {data.name}
+                      <Link to={data.link}>{data.name}</Link>
                     </span>
                   ))}
                 </ul>
