@@ -10,7 +10,7 @@ export default function Projects() {
     const demoItems = [
         { link: 'https://github.com/Fiteropp/SFML-Checkers', text: 'Checkers C++', image: checkers_img },
         { link: 'https://github.com/Fiteropp/MERN-Travel-Project', text: 'MERN Travel Project', image: mern_travel },
-        { link: 'https://github.com/Fiteropp', text: 'My Github', image: 'https://miro.medium.com/v2/resize:fit:1400/1*JLYlSLSK8-AZo8gt9UdYqA.jpeg' },
+        { link: 'https://github.com/Fiteropp/My-Portfolio', text: 'This Webpage On GitHub', image: 'https://miro.medium.com/v2/resize:fit:1400/1*JLYlSLSK8-AZo8gt9UdYqA.jpeg' },
        
     ];
 

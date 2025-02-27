@@ -3,6 +3,7 @@ import React from "react";
 import { Polygon1, Polygon3 } from "../components/Polygons/Polygons";
 
 import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Contact = () => {
     return (
@@ -54,9 +55,23 @@ const Contact = () => {
                                         <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
                                             Github Username
                                         </h4>
-                                        <p className="text-base text-body-color dark:text-dark-6">
+                                        <a href="https://github.com/Fiteropp" className="text-base text-body-color dark:text-dark-6">
                                             Fiteropp
-                                        </p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div className="mb-8 flex w-full max-w-[370px]">
+                                    <div className="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                                       <FaLinkedin size={32} />
+                                    </div>
+                                    <div className="w-full">
+                                        <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
+                                            LinkedIn
+                                        </h4>
+                                        <a href="https://linkedin.com/in/ilia-stupnikov" className="text-base text-body-color dark:text-dark-6">
+                                            Ilia Stupnikov
+                                        </a>
                                     </div>
                                 </div>
 
