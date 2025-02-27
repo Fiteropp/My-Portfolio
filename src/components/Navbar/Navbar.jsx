@@ -87,17 +87,17 @@ export default function Navbar() {
             }`}
           >
             <div
-              className={`w-full h-full bg-[#365CCE] absolute left-0 transition-all duration-300 ease-in-out top-8 ${
+              className={`w-full h-full  absolute left-0 transition-all duration-300 ease-in-out top-8 ${
                 toggle ? "ssm:w-3/5 opacity-60" : "ssm:w-0 -z-10"
               }`}
             ></div>
             <div
               data-tilt
               data-tilt-perspective="2000"
-              className="relative z-20 text-center pt-24 w-full ssm:w-3/5"
+              className="relative z-20 backdrop-blur-[5px] text-center pt-24 w-full ssm:w-3/5 "
             >
               <div
-                className={`block min-h-[130px] w-fit mx-auto transform transition ${
+                className={` block min-h-[130px] w-fit mx-auto transform transition ${
                   toggle
                     ? "opacity-100 -translate-y-1/3 delay-[0.45s]"
                     : "opacity-0 -translate-y-0  delay-[0s]"
